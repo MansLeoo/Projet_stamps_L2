@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: #3C3C3C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerEdition">
+   <center>
+      <VBox prefHeight="765.0" prefWidth="442.0" style="-fx-background-color: #5D5D5D;" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="152.0" prefWidth="152.0" style="-fx-border-color: #1848FC;" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fx:id="view" fitHeight="150.0" fitWidth="150.0" onMouseClicked="#selectImg" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@200x200.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+            </BorderPane>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="74.0" text="Nom :" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nom" prefHeight="50.0" prefWidth="350.0" promptText="Nom de l'astre" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="74.0" text="Type:" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="type" prefHeight="50.0" prefWidth="350.0" promptText="Planète,étoile..." />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="74.0" text="Date :" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="date" editable="false" prefHeight="50.0" prefWidth="350.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="74.0" text="Description:" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="description" prefHeight="50.0" prefWidth="350.0" promptText="Description de l'astre" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="310.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="74.0" text="Tags :" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <ScrollPane minHeight="-Infinity" prefHeight="149.0" prefWidth="367.0" BorderPane.alignment="CENTER">
+                           <content>
+                              <TilePane fx:id="tileCheck" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefColumns="2" prefRows="2" prefTileHeight="25.0" prefTileWidth="360.0" prefWidth="360.0" tileAlignment="CENTER_LEFT" />
+                           </content>
+                        </ScrollPane>
+                     </center>
+                     <top>
+                        <HBox prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TextField fx:id="tag" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="300.0" promptText="tag" />
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ajouterTag" prefHeight="25.0" prefWidth="50.0" text="Add">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+               </children>
+            </HBox>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <Button mnemonicParsing="false" onAction="#AjouterAstre" prefHeight="50.0" prefWidth="352.0" text="Valider" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets left="60.0" />
+                     </BorderPane.margin></Button>
+               </center>
+            </BorderPane>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="802.0" text="Modifier un Astre" textFill="WHITE" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Hack Regular" size="29.0" />
+         </font>
+      </Label>
+   </top>
+</BorderPane>

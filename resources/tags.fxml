@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.TilePane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerTags">
+   <top>
+      <ScrollPane maxHeight="-Infinity" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <TilePane fx:id="lstTag" prefHeight="200.0" prefTileHeight="25.0" prefTileWidth="380.0" prefWidth="382.0" tileAlignment="TOP_LEFT" />
+         </content>
+      </ScrollPane>
+   </top>
+   <bottom>
+      <Button maxWidth="-Infinity" mnemonicParsing="false" onAction="#rechercher" prefHeight="30.0" prefWidth="100.0" text="Trier" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="40.0" left="20.0" right="30.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+</BorderPane>
